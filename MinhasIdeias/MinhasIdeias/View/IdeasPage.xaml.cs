@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MinhasIdeias.DTOS;
+using MinhasIdeias.Services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +18,12 @@ namespace MinhasIdeias.View
         public IdeasPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            IdeasListView.ItemsSource = new ObservableCollection<IdeaDTO>(IdeasService.Build().GetAll()); 
         }
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
