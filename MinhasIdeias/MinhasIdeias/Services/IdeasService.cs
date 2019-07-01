@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MinhasIdeias.Data;
+using MinhasIdeias.DTOS;
+using MinhasIdeias.Mapper;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +9,29 @@ namespace MinhasIdeias.Services
 {
     public class IdeasService
     {
-        public int Create()
+        public static IdeasService Build()
         {
-
-            return 0;
+            return new IdeasService();
         }
+        public int Create(IdeaDTO entityDto)
+        {
+            return IdeasRepository.Build().Create(IdeasMapper.ToModel(entityDto));
+        }
+
+        public int Update(IdeaDTO entityDto)
+        {
+            return IdeasRepository.Build().Update(IdeasMapper.ToModel(entityDto));
+        }
+
+        public List<IdeaDTO> GetAll()
+        {
+            return IdeasRepository.Build().GetAll();
+        }
+
+        public int Delete(IdeaDTO entityDto)
+        {
+            return IdeasRepository.Build().Delete(IdeasMapper.ToModel(entityDto));
+        }
+
     }
 }

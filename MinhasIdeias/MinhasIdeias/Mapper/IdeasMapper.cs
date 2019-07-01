@@ -8,7 +8,7 @@ namespace MinhasIdeias.Mapper
 {
     public class IdeasMapper
     {
-        public Idea ToModel(IdeaDTO entityDTO)
+        public static Idea ToModel(IdeaDTO entityDTO)
         {
             return new Idea()
             {
@@ -18,7 +18,7 @@ namespace MinhasIdeias.Mapper
             };
         }
 
-        public IdeaDTO ToDto(Idea entityModel)
+        public static IdeaDTO ToDto(Idea entityModel)
         {
             return new IdeaDTO()
             {
