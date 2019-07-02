@@ -23,6 +23,11 @@ namespace MinhasIdeias.Services
             return IdeasRepository.Build().Update(IdeasMapper.ToModel(entityDto));
         }
 
+        public int CreateOrUpdate(IdeaDTO entityDto)
+        {
+            return entityDto.Id > 0 ? Update(entityDto) : Create(entityDto);
+        }
+
         public List<IdeaDTO> GetAll()
         {
             return IdeasRepository.Build().GetAll();
