@@ -29,7 +29,7 @@ namespace MinhasIdeias.Services
             return entityDto.Id > 0 ? Update(entityDto) : Create(entityDto);
         }
 
-        public List<IdeaDTO> GetAll()
+        public async Task<List<IdeaDTO>> GetAll()
         {
             return IdeasRepository.Build().GetAll();
         }
