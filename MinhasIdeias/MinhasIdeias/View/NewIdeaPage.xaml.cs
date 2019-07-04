@@ -42,7 +42,7 @@ namespace MinhasIdeias.View
         {
             if (EntityDto.Id == 0)
                 SetEntityDto(new IdeaDTO() { Description = DescriptionEntry.Text, Comment = CommentEntry.Text });
-            if(IdeasService.Build().Create(EntityDto) > 0)
+            if(IdeasService.Build().CreateOrUpdate(EntityDto) > 0)
             {
                 DisplayAlert("Sucesso!", "Ideia cadastrada", "Ok");
                 Navigation.PushAsync(new IdeasPage());
