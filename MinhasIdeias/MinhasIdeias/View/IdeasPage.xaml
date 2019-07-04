@@ -8,11 +8,33 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="New Idea" Activated="ToolbarItem_Activated" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="IdeasListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Description}" Detail="{Binding Comment}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout>
+        <ListView x:Name="IdeasListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Label ClassId="{Binding Id}">
+                                <Label.Text>Editar</Label.Text>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Edit" />
+                                </Label.GestureRecognizers>
+                            </Label> 
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Description}"></Label>
+                                <Label Text="{Binding Comment}"></Label>
+                            </StackLayout>
+                            <Label ClassId="{Binding Id}">
+                                <Label.Text>Excluir</Label.Text>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Delete" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--<TextCell Text="{Binding Description}" Detail="{Binding Comment}" /> -->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

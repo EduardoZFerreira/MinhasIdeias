@@ -4,6 +4,7 @@ using MinhasIdeias.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MinhasIdeias.Services
 {
@@ -23,7 +24,7 @@ namespace MinhasIdeias.Services
             return IdeasRepository.Build().Update(IdeasMapper.ToModel(entityDto));
         }
 
-        public List<IdeaDTO> GetAll()
+        public async Task<List<IdeaDTO>> GetAll()
         {
             return IdeasRepository.Build().GetAll();
         }
