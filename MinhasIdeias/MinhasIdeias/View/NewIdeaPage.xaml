@@ -7,7 +7,7 @@
              x:Class="MinhasIdeias.View.NewIdeaPage">
     <StackLayout Margin="10, 10, 10, 0">
         <Entry x:Name="DescriptionEntry" Placeholder="Descrição" />
-        <Entry x:Name="CommentEntry" Placeholder="Comentario" />
+        <Editor x:Name="CommentEntry" Placeholder="Comentario" />
         <Button Text="Salvar" Clicked="Button_Clicked" />
     </StackLayout>
 </ContentPage>

@@ -14,7 +14,8 @@ namespace MinhasIdeias.Mapper
             {
                 Id = entityDTO.Id,
                 Description = entityDTO.Description,
-                Comment = entityDTO.Comment
+                Comment = entityDTO.Comment,
+                Brainstorm = entityDTO.Brainstorm
             };
         }
 
@@ -24,7 +25,8 @@ namespace MinhasIdeias.Mapper
             {
                 Id = entityModel.Id,
                 Description = entityModel.Description,
-                Comment = entityModel.Comment
+                Comment = entityModel.Comment,
+                Brainstorm = entityModel.Brainstorm
             };
         }
     }
