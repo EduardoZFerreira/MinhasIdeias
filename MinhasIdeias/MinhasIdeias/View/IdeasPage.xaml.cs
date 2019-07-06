@@ -40,14 +40,14 @@ namespace MinhasIdeias.View
 
         private void Edit(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(((Label)sender).ClassId);
+            int id = Convert.ToInt32(((Image)sender).ClassId);
             IdeaDTO entityDto = entityDtos.Find(x => x.Id == id);
             Navigation.PushAsync(new NewIdeaPage(entityDto));
         }
 
         private async void Delete(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(((Label)sender).ClassId);
+            int id = Convert.ToInt32(((Image)sender).ClassId);
             IdeaDTO entityDto = entityDtos.Find(x => x.Id == id);
             string confirm = await DisplayActionSheet("Tem certeza que deseja excluir este item?", "Voltar", null, "Sim", "Não");
             if (confirm == "Sim")

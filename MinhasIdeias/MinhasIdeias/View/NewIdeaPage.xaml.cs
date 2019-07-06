@@ -38,11 +38,16 @@ namespace MinhasIdeias.View
             CommentEntry.Text = entityDto.Comment;
         }
 
+        private IdeaDTO UpdateEntityFromEntries(IdeaDTO entityDto)
+        {
+            entityDto.Description = DescriptionEntry.Text;
+            entityDto.Comment = CommentEntry.Text;
+            return entityDto;
+        }
+
         private void Button_Clicked(object sender, EventArgs e)
         {
-            if (EntityDto.Id == 0)
-                SetEntityDto(new IdeaDTO() { Description = DescriptionEntry.Text, Comment = CommentEntry.Text });
-            if(IdeasService.Build().CreateOrUpdate(EntityDto) > 0)
+            if(IdeasService.Build().CreateOrUpdate(UpdateEntityFromEntries(EntityDto)) > 0)
             {
                 DisplayAlert("Sucesso!", "Ideia cadastrada", "Ok");
                 Navigation.PushAsync(new IdeasPage());
