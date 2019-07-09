@@ -6,13 +6,14 @@
              mc:Ignorable="d"
              x:Class="MinhasIdeias.View.IdeaPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Label x:Name="Description"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <Label x:Name="Comment"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="Comment"/>
+            <Label Text="Brainstorming: " HorizontalOptions="StartAndExpand" />
+            <Label x:Name="Brainstorming" />
+            <Button Text="Incrementar brainstorming" Clicked="Button_Clicked" BackgroundColor="#42b55a" TextColor="#d3efd6 "  CornerRadius="10" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

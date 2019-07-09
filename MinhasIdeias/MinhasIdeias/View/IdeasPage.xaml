@@ -17,16 +17,16 @@
         <ListView x:Name="IdeasListView" SeparatorVisibility="None" ItemSelected="IdeasListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell Height="30">
-                        <StackLayout Orientation="Horizontal" Padding="5">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" >
                             <Image Source="Editar.png" ClassId="{Binding Id}">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="Edit" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <StackLayout HorizontalOptions="StartAndExpand">
-                                <Label Text="{Binding Description}"></Label>
-                                <Label Text="{Binding Comment}"></Label>
+                            <StackLayout HorizontalOptions="StartAndExpand" Spacing="1">
+                                <Label Text="{Binding Description}"  />
+                                <Label Text="Ver detalhes..." />
                             </StackLayout>
                             <Image Source="Excluir.png" ClassId="{Binding Id}">
                                 <Image.GestureRecognizers>
@@ -35,7 +35,6 @@
                             </Image>
                         </StackLayout>
                     </ViewCell>
-                    <!--<TextCell Text="{Binding Description}" Detail="{Binding Comment}" /> -->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
