@@ -65,5 +65,12 @@ namespace MinhasIdeias.View
         {
             Navigation.PushAsync(new NewIdeaPage());
         }
+
+        private void IdeasListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            IdeaDTO entityDto = (IdeaDTO)((ListView)sender).SelectedItem;
+            ((ListView)sender).SelectedItem = null;
+            if(entityDto != null) Navigation.PushAsync(new IdeaPage(entityDto));
+        }
     }
 }

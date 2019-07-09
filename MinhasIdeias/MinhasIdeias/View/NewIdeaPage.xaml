@@ -7,7 +7,7 @@
              x:Class="MinhasIdeias.View.NewIdeaPage">
     <StackLayout Margin="10, 10, 10, 0">
         <Entry x:Name="DescriptionEntry" Placeholder="Descrição" />
-        <Editor x:Name="CommentEntry" Placeholder="Comentario" HeightRequest="400" HorizontalOptions="FillAndExpand" Keyboard="Chat" />
-        <Button Text="Salvar" Clicked="Button_Clicked" />
+        <Editor x:Name="CommentEntry" Placeholder="Comentario" HeightRequest="300" HorizontalOptions="FillAndExpand" Keyboard="Chat" />
+        <Button Text="Salvar" Clicked="Button_Clicked" BackgroundColor="#42b55a" TextColor="#d3efd6 "  CornerRadius="10"/>
     </StackLayout>
 </ContentPage>

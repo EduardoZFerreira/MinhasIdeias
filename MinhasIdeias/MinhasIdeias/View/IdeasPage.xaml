@@ -6,10 +6,15 @@
              mc:Ignorable="d"
              x:Class="MinhasIdeias.View.IdeasPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New Idea" Activated="ToolbarItem_Activated" />
+        <ToolbarItem Text="+" Activated="ToolbarItem_Activated" />
     </ContentPage.ToolbarItems>
+    <!-- 
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color" Android="#42b55a" iOS="#42b55a"/>
+    </ContentPage.BackgroundColor>
+    -->
     <StackLayout>
-        <ListView x:Name="IdeasListView" SeparatorVisibility="None">
+        <ListView x:Name="IdeasListView" SeparatorVisibility="None" ItemSelected="IdeasListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="30">
